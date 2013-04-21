@@ -29,6 +29,7 @@ group :test do
   gem 'database_cleaner'
 end
 
+gem 'thin', '~> 1.5.1'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
