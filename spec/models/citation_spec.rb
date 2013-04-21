@@ -6,7 +6,10 @@ describe Citation do
     @citation = Citation.new(title: "Sample Article", 
                 abstract: "This is an example",
                 publish_date: "2013/01/01",
-                authors: "Smith, J.; Shmoe, J.")
+                authors: "Smith, J.; Shmoe, J.",
+                )
+    @citation.citable_id = 1
+    @citation.citable_type = "article"
   }
 
   subject { @citation }
@@ -15,6 +18,8 @@ describe Citation do
   it { should respond_to(:abstract) }
   it { should respond_to(:publish_date) }
   it { should respond_to(:authors) }
+  it { should respond_to(:citable_id) }
+  it { should respond_to(:citable_type) }
 
   it { should be_valid }
 

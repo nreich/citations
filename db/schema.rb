@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130421212215) do
+ActiveRecord::Schema.define(:version => 20130421224618) do
+
+  create_table "articles", :force => true do |t|
+    t.string   "journal"
+    t.string   "issue"
+    t.string   "volume"
+    t.string   "pages"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "citations", :force => true do |t|
     t.string   "title"
@@ -20,6 +29,8 @@ ActiveRecord::Schema.define(:version => 20130421212215) do
     t.string   "authors"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.integer  "citable_id"
+    t.string   "citable_type"
   end
 
 end
